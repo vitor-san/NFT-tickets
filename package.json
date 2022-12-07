@@ -1,0 +1,25 @@
+{
+  "name": "event_tickets",
+  "version": "1.0.0",
+  "description": "event tickets using NFTs",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^2.1.2",
+    "truffle": "^5.0.3",
+    "truffle-assertions": "^0.8.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "NFT",
+    "ERC721",
+    "Solidity",
+    "Event",
+    "Ticket"
+  ],
+  "license": "UNLICENSED"
+}
