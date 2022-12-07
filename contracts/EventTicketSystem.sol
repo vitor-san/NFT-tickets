@@ -187,7 +187,11 @@ contract EventTicketSystem is ERC721URIStorage, Pausable, Ownable {
     function getTicket(uint256 _id)
         external
         view
-        returns (Ticket)
+        returns (
+            uint256 price,
+            bool forSale,
+            bool used
+        )
     {
         price = uint256(tickets[_id].price);
         forSale = bool(tickets[_id].forSale);
