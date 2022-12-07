@@ -24,14 +24,29 @@ Everything starts with the event organizer, who is responsible for creating an E
 ### Event Organizer Functions
 The Event Organizer, the account that deployed the contract, also has access to some functions that other accounts cannot use. They are:
 
-function setTicketToUsed(uint256 _ticketId)
-function setEventStartDatetime(uint64 _eventStartDatetime)
-function setTicketSupply(uint64 _ticketSupply)
-function setMaxPriceFactorInPercentage(uint64 _maxPriceFactorInPercentage)
-function setTicketTransferFeeInPercentage(uint64 _transferFeeInPercentage)
-function setWithdrawalAddress(address payable _addr)
-function withdrawBalance()
+- **function setTicketToUsed(uint256 _ticketId)**
+- **function setEventStartDatetime(uint64 _eventStartDatetime)**
+- **function setTicketSupply(uint64 _ticketSupply)**
+- **function setMaxPriceFactorInPercentage(uint64 _maxPriceFactorInPercentage)**
+- **function setTicketTransferFeeInPercentage(uint64 _transferFeeInPercentage)**
+- **function setWithdrawalAddress(address payable _addr)**
+- **function withdrawBalance()**
 
 ### General User Functions
 Other accounts also can interact with the Smart Contract, so that other users are able to buy, sell, and use their Tickets. These accounts have access to the functions:
+
+- **setTicketForSale(uint256 _ticketId)**
+- **cancelTicketSale(uint256 _ticketId)**
+- **getTicket(uint256 _id)**
+- **getTicketPrice(uint256 _ticketId)**
+- getTicketMaxPrice(uint256 _ticketId)
+- **getTicketCalculatedTransferFee(uint256 _ticketId)**
+- **getTicketStatus(uint256 _ticketId)**
+- **getTicketResaleStatus(uint256 _ticketId)**
+- **checkTicketOwnership(uint256 _ticketId)**
+- **buyTicket()**
+- **approveAsBuyerOfTicket(uint256 _ticketId, address _buyer)**
+- **buyTicketFromAttendee(uint256 _ticketId)**
+- **destroyTicket(uint256 _ticketId)**
+
 
