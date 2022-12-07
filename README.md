@@ -24,29 +24,42 @@ Everything starts with the event organizer, who is responsible for creating an E
 ### Event Organizer Functions
 The Event Organizer, the account that deployed the contract, also has access to some functions that other accounts cannot use. They are:
 
-- **function setTicketToUsed(uint256 _ticketId)**
-- **function setEventStartDatetime(uint64 _eventStartDatetime)**
-- **function setTicketSupply(uint64 _ticketSupply)**
-- **function setMaxPriceFactorInPercentage(uint64 _maxPriceFactorInPercentage)**
-- **function setTicketTransferFeeInPercentage(uint64 _transferFeeInPercentage)**
-- **function setWithdrawalAddress(address payable _addr)**
-- **function withdrawBalance()**
+```js
+- function setEventStartDatetime(uint64 _eventStartDatetime)
+- function setTicketSupply(uint64 _ticketSupply)
+- function setMaxPriceFactorInPercentage(uint64 _maxPriceFactorInPercentage)
+- function setTicketTransferFeeInPercentage(uint64 _transferFeeInPercentage)
+- function setTicketToUsed(uint256 _ticketId)
+- function setWithdrawalAddress(address payable _addr)
+- function withdrawBalance()
+```
+
+So, basically, the Event Organizer can **set** all the attributes present in the contract constructor, also being able to set a ticket status to "used" and withdrawing the balance of the contract / changing the withdrawal address (if they want to).
 
 ### General User Functions
 Other accounts also can interact with the Smart Contract, so that other users are able to buy, sell, and use their Tickets. These accounts have access to the functions:
 
-- **setTicketForSale(uint256 _ticketId)**
-- **cancelTicketSale(uint256 _ticketId)**
-- **getTicket(uint256 _id)**
-- **getTicketPrice(uint256 _ticketId)**
+```js
+- buyTicket()
+- buyTicketFromAttendee(uint256 _ticketId)
+- checkTicketOwnership(uint256 _ticketId)
+- approveAsBuyerOfTicket(uint256 _ticketId, address _buyer)
+- destroyTicket(uint256 _ticketId)
+- setTicketPrice(uint256 _ticketId, uint256 _price)
+- setTicketForSale(uint256 _ticketId)
+- cancelTicketSale(uint256 _ticketId)
+- getTicket(uint256 _id)
+- getTicketPrice(uint256 _ticketId)
 - getTicketMaxPrice(uint256 _ticketId)
-- **getTicketCalculatedTransferFee(uint256 _ticketId)**
-- **getTicketStatus(uint256 _ticketId)**
-- **getTicketResaleStatus(uint256 _ticketId)**
-- **checkTicketOwnership(uint256 _ticketId)**
-- **buyTicket()**
-- **approveAsBuyerOfTicket(uint256 _ticketId, address _buyer)**
-- **buyTicketFromAttendee(uint256 _ticketId)**
-- **destroyTicket(uint256 _ticketId)**
+- getTicketCalculatedTransferFee(uint256 _ticketId)
+- getTicketStatus(uint256 _ticketId)
+- getTicketResaleStatus(uint256 _ticketId)
+```
 
-
+Besides getting all ticket information, the users can, basically:
+- Buy a ticket directly from the Event Organizer (primary market)
+- Buy a ticket from another atendee, but only after it's approval (secondary market)
+- Check if one person is the owner of a ticket they claim to be
+- Delete the ticket
+- Set the ticket price and put it to sale (secondary market)
+- Cancel it's sale (secondary market)
