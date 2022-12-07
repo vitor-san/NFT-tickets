@@ -2,12 +2,6 @@
 
 pragma solidity >=0.8.0 <0.9.0;
 
-// FIGURA DE OVERVIEW E DESCREVER ESSA FIGURA
-// DESCREVER EM ALTO NÍVEL O CONTRATO. DIAGRAMA DE INTERAÇÃO COM O CONTRATO. DESENHAR COMO ACONTECEM OS EVENTOS
-// COLOCAR NA DOCS OS CUSTOS PARA DEPLOYAR E TRANSACIONAR COM O CONTRATO
-// UM FICA PRA DAR UMA LIMPADA NO CÓDIGO E O OUTRO FICA CONCENTRADO PRA DESCREVER
-// FAZER UM PITCH SOBRE A PLATAFORMA
-
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -193,11 +187,7 @@ contract EventTicketSystem is ERC721URIStorage, Pausable, Ownable {
     function getTicket(uint256 _id)
         external
         view
-        returns (
-            uint256 price,
-            bool forSale,
-            bool used
-        )
+        returns (Ticket)
     {
         price = uint256(tickets[_id].price);
         forSale = bool(tickets[_id].forSale);
