@@ -40,20 +40,20 @@ So, basically, the Event Organizer can **set** all the attributes present in the
 Other accounts also can interact with the Smart Contract, so that other users are able to buy, sell, and use their Tickets. These accounts have access to the functions:
 
 ```js
-- buyTicket()
-- buyTicketFromAttendee(uint256 _ticketId)
-- checkTicketOwnership(uint256 _ticketId)
-- approveAsBuyerOfTicket(uint256 _ticketId, address _buyer)
-- destroyTicket(uint256 _ticketId)
-- setTicketPrice(uint256 _ticketId, uint256 _price)
-- setTicketForSale(uint256 _ticketId)
-- cancelTicketSale(uint256 _ticketId)
-- getTicket(uint256 _id)
-- getTicketPrice(uint256 _ticketId)
-- getTicketMaxPrice(uint256 _ticketId)
-- getTicketCalculatedTransferFee(uint256 _ticketId)
-- getTicketStatus(uint256 _ticketId)
-- getTicketResaleStatus(uint256 _ticketId)
+- function buyTicket()
+- function buyTicketFromAttendee(uint256 _ticketId)
+- function checkTicketOwnership(uint256 _ticketId)
+- function approveAsBuyerOfTicket(uint256 _ticketId, address _buyer)
+- function destroyTicket(uint256 _ticketId)
+- function setTicketPrice(uint256 _ticketId, uint256 _price)
+- function setTicketForSale(uint256 _ticketId)
+- function cancelTicketSale(uint256 _ticketId)
+- function getTicket(uint256 _id)
+- function getTicketPrice(uint256 _ticketId)
+- function getTicketMaxPrice(uint256 _ticketId)
+- function getTicketCalculatedTransferFee(uint256 _ticketId)
+- function getTicketStatus(uint256 _ticketId)
+- function getTicketResaleStatus(uint256 _ticketId)
 ```
 
 Besides getting all ticket information, the users can, basically:
