@@ -1,4 +1,4 @@
-# NFT-event-tickets
+# NFT-tickets
 prototype of an event ticket system based on NFTs (ERC-721)
 
 ## prerequisites
