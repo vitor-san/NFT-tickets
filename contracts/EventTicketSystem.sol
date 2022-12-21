@@ -305,7 +305,7 @@ contract EventTicketSystem is ERC721URIStorage, Pausable, Ownable {
         eventNotStarted
         whenNotPaused
     {
-        require(tickets[_ticketId].forSale = true, "ticket not for sale");
+        require(tickets[_ticketId].forSale == true, "ticket not for sale");
         require(getApproved(_ticketId) == msg.sender, "not approved");
 
         uint256 _priceToPay = tickets[_ticketId].price;
